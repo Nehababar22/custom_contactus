@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="menu_custom_form" model="website.menu">
+        <field name="name">Contact</field>
+        <field name="url">/contact</field>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence" type="int">22</field>
+    </record>
+    <template id="tmp_custom_form" name="Custom Form" >
+        <t t-call="website.layout">
+            <div id="wrap">
+                <section class="s_text_block pt120 pb40 o_colored_level " data-snippet="s_text_block">
+                    <div class="container s_allow_columns">
+                    <div class="row between-md">
+                        <div class="col-lg-5 mt-4 mt-lg-0">                          
+                            <div class="mb-0 ps-2">
+                            <h1 class="title">See how we turn ideas into real life products.</h1>
+                            <p class="description">
+                            "Let's talk about your needs - fill in the form and we will contact you within 24 hours. 
+                            We can't wait to start working with you!"
+                            </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 mt-4 mt-lg-0">                          
+                            <section class="s_website_form" data-vcss="001" data-snippet="s_website_form">
+                            <div class="container">
+                                <form id="contactus_form" action="/website/form/" method="post" enctype="multipart/form-data" class="o_mark_required" data-mark="*" 
+                                    data-model_name="crm.lead" data-success-mode="redirect" data-success-page="/contact-thank-you" 
+                                    data-pre-fill="true">
+                                <div class="s_website_form_rows row s_col_no_bgcolor">
+                                    <h2 class="form-section__title">Who are you?</h2>  
+                                    <div class="mb-0 py-2 col-12 s_website_form_field s_website_form_custom s_website_form_required" data-type="char" data-name="Field">
+                                        <div class="row s_col_no_resize s_col_no_bgcolor">
+                                            <div class="col-lg">
+                                                <input id="contact1" style="height:60px;" type="text" class="form-control s_website_form_input" name="name" required="" placeholder="Full name"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-0 py-2 col-12 s_website_form_field s_website_form_custom" data-type="char" data-name="Field">
+                                        <div class="row s_col_no_resize s_col_no_bgcolor">
+                                            <div class="col-lg">
+                                                <input id="contact2" style="height:60px;" type="tel" class="form-control s_website_form_input" name="phone" placeholder="Phone number" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-0 py-2 col-12 s_website_form_field s_website_form_required" data-type="email" data-name="Field">
+                                        <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <div class="col-lg">
+                                            <input id="contact3" style="height:60px;" type="email" class="form-control s_website_form_input" name="email_from" required="" placeholder="Email address" />
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-0 py-2 col-12 s_website_form_field s_website_form_custom" data-type="char" data-name="Field">
+                                        <div class="row s_col_no_resize s_col_no_bgcolor">
+                                            <div class="col-lg">
+                                                <input id="contact4" style="height:60px;" type="text" class="form-control s_website_form_input" name="company" required="" placeholder="Company name"/>
+                                            </div>
+                                        </div>
+                                    </div>  
+                                    <div class="form-section" style='margin-bottom:3rem'>
+                                        <h2 class="form-title">What do you need?
+                                        <span class='info'>
+                                        Select as many as you want.                                                
+                                        </span>
+                                        </h2>
+                                        <div class="btn-container">
+                                        <div class="col-xs-12">
+                                            <div class="select btn-group">
+                                                <input type="checkbox" id="item_1" name="need_ids[]" class="need_ids" value="free into call"/>
+                                                <label class="btn btn-outline-primary button_select" for="item_1">Free into call</label>
+                                            </div>                                                        
+                                            <div class="select btn-group" >
+                                                <input type="checkbox" id="item_2" name="need_ids[]" class="need_ids" value="product discovery"/>
+                                                <label class="btn btn-outline-primary button_select btn-md" for="item_2">Product discovery</label>                                                  
+                                            </div>                                                        
+                                            <div class="select btn-group">
+                                                <input type="checkbox" id="item_3" name="need_ids[]" class="need_ids" value="prototyping"/>
+                                                <label class="btn btn-outline-primary button_select" for="item_3">Prototyping</label>                                                   
+                                            </div>                                                        
+                                            <div class="select btn-group">
+                                                <input type="checkbox" id="item_4" name="need_ids[]" class="need_ids" value="Product design "/>
+                                                <label class="btn btn-outline-primary button_select" for="item_4">Product design</label>
+                                            </div>
+                                            <div class="select btn-group">
+                                                <input type="checkbox" id="item_5" name="need_ids[]" class="need_ids" value="Scrum team "/>
+                                                <label class="btn btn-outline-primary button_select" for="item_5">Scrum team</label>
+                                            </div>
+                                                <div class="select btn-group">
+                                                    <input type="checkbox" id="item_6" name="need_ids[]" class="need_ids" value="mobile application "/>
+                                                    <label class="btn btn-outline-primary button_select" for="item_6">Mobile Application</label>
+                                                </div>
+                                                <div class="select btn-group">
+                                                    <input type="checkbox" id="item_7" name="need_ids[]" class="need_ids" value="web application "/>
+                                                    <label class="btn btn-outline-primary button_select" for="item_7">Web application</label>
+                                                </div>
+                                            </div>
+                                            </div>                                               
+                                        </div> 
+                                        <div class="form-section" style='margin-bottom:3rem'>
+                                            <h2 class="form-section__title">What is your budget?
+                                            <span class='form-section__info'>
+                                            Knowing your budget will help us to make sure that we can match your expectations.                                             
+                                            </span>
+                                            </h2>
+                                            <div class="flex relative justify-center items-center">
+                                                <div class="numberVal labels ">
+                                                    <input type="label" class="border" min="5000" max="25000" value="$5000"  />
+                                                    <span class="hyphen">-</span>
+                                                    <input type="label" class="border" min="5000" max="25000" value="Unlimited" />
+                                                </div>
+                                                <div class="range-slider">
+                                                    <div class="progress" ></div>
+                                                    <span class="range-min-wrapper" >
+                                                        <input class="range-min" type="range" name="minRange" min="5000" max="25000" value="$5000"/>
+                                                    </span>
+                                                    <span class="range-max-wrapper">
+                                                        <input class="range-max" type="range" name="maxRange" min="5000" max="25000" value="$25000"/>
+                                                    </span>
+                                                </div>                                                    
+                                            </div>
+                                        </div>    
+                                        <div class="form-section" style='margin-bottom:3rem'>
+                                            <h2 class="form-title">What do you need?</h2>
+                                            <div class="btn-group col-xs-12">
+                                            <label class="option">
+                                            <input type="radio" name="timeframe" value="Not specified"><span class="btn btn-outline-primary btn-option">Not specified</span></input>
+                                            </label>
+                                            <label class="option">
+                                            <input type="radio" name="timeframe" value="&lt; 6 months"><span class="btn btn-outline-primary btn-option">&lt; 6 months</span></input>
+                                            </label>
+                                            <label class="option">
+                                            <input type="radio" name="timeframe" value="&gt; 6 months"><span class="btn btn-outline-primary btn-option">&gt; 6 months</span></input>
+                                            </label>
+                                            </div>
+                                        </div>  
+                                        <div class="form-section" >
+                                            <h2 class="form-title">What are your thoughts?</h2>
+                                            <div class="input-wrapper" style='margin-top:20px'>
+                                                <div class="mb-0 py-2 col-12 s_website_form_field s_website_form_custom s_website_form_required">
+                                                    <textarea class="form__input" type="text" rows="5" name="thoughts" style="height:150px;max-width:100%" required=""  placeholder="A few words about the scope"/>
+                                                </div>
+                                            </div>
+                                        </div>    
+                                        <div class="form-section" >
+                                            <h2 class="form-title">Would you like to send us some materials?</h2>  
+                                            <div class='value-project-form__button-section' style="margin-top:2rem;">                                    
+                                            <div class="files-upload" style="width:50%;Text-align:left;float:left;" data-target="contact_form.file" data-controller="files_upload" data-type="char" data-name="Field">
+                                                <label class="files-upload__label" for="upload">
+                                                <svg class="files-upload__icon" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
+                                                    <g fill="none" fill-rule="evenodd">
+                                                    <circle cx="18" cy="18" r="18" fill="#06F" opacity=".201" />
+                                                    <path stroke="#06F" stroke-linecap="round" stroke-linejoin="round" 
+                                                    d="M23.253 17.366l-4.353 7.54c-1.09 1.886-3.523 2.52-5.436 1.415-1.913-1.105-2.581-3.53-1.492-5.416l6.526-11.303c.83-1.437 2.684-1.92 4.141-1.078 1.457.841 1.966 2.688 1.137 4.125l-6.53 11.309c-.589 1.02-1.906 1.363-2.942.765-1.036-.598-1.397-1.91-.808-2.93l6.031-10.448" />
+                                                    </g>
+                                                </svg>
+                                                Add file
+                                                <br></br>
+                                                <span class="files-upload__support-info" style="font-size: .75rem; color: #5f6369; right:50px;">
+                                                Supported formats: .pdf, .jpg, .png
+                                                </span>
+                                                <input class="files-upload__input" id="upload" type="file" style="display: none;" name="attachment"  accept="application/pdf, image/png, image/jpeg"/>
+                                                </label>
+                                            </div>
+                                            <div class="h-captcha" id="hcaptcha" data-sitekey="5999a393-bb2f-40b8-9f06-c952dcbc4089" data-callback="onloadCallback"/>
+                                            
+                                            </div>
+                                        </div>                                          
+                                        <div class="mb-0 py-2 col-12 s_website_form_submit" data-name="Submit Button">
+                                            <div style="width: 200px;" class="s_website_form_label"/>
+                                            <a href="#" role="button" id="submit" class="btn btn-primary btn-lg s_website_form_send">Submit</a>
+                                            <span id="s_website_form_result"></span>
+                                        </div>
+                                        
+                                    </div>
+                                    </form>
+                                </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </section>                                                                                 
+            </div>
+        </t>
+    </template>
+    <record id="contact_thanks" model="website.page">
+        <field name="name">Thanks (Contact)</field>
+        <field name="type">qweb</field>
+        <field name="url">/contact-thank-you</field>
+        <field name="website_indexed" eval="False"/>
+        <field name="is_published">True</field>
+        <field name="key">website.contact_thanks</field>
+        <field name="arch" type="xml">
+            <t name="Thanks (Contact)" t-name="contact_thanks">
+                <t t-call="website.layout">
+                    <div id="wrap" class="oe_structure oe_empty">
+                        <section class="s_text_block pt40 pb40 o_colored_level " data-snippet="s_text_block">
+                            <div class="container s_allow_columns">
+                                <div class="row">
+                                    <div class="col-lg-7 col-xl-6 me-lg-auto">
+                                        <span class="d-block fa fa-4x fa-thumbs-up mx-auto rounded-circle bg-primary"/><br/>
+                                        <h1 class="text-center">Thank You!</h1>
+                                        <div class="pb16 pt16 s_hr" data-snippet="s_hr" data-name="Separator">
+                                            <hr class="mx-auto border-top w-50 border-dark text-center"/>
+                                        </div>
+                                        <h5 class="text-center">
+                                            <span class="fa fa-check-circle"/>
+                                            <span>Your message has been sent <b>successfully</b></span>
+                                        </h5>
+                                        <p class="text-center">We will get back to you shortly.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+</odoo>
